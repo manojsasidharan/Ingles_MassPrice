@@ -1,0 +1,180 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" xmlns:t="sap.ui.table" 
+	controllerName="com.ingles.retail_pricing.mass_price.mass_price.controller.MaterialList" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Pricing List" class="sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--footer">
+		<headerContent>
+			<Button icon="sap-icon://refresh" tooltip="Refresh"  />
+			<Button icon="sap-icon://exit-full-screen" tooltip="Full Screen" visible="{path: 'layout>/view', formatter: '.isFullScreen'}" press="exitFullScreen" />
+			<Button icon="sap-icon://full-screen" tooltip="Full Screen" visible="{path: 'layout>/view', formatter: '.isNotFullScreen'}" press="enterFullScreen" />
+			<Button icon="sap-icon://decline" tooltip="Cancel" press="cancelDetail" />
+		</headerContent>
+		<subHeader>
+			<OverflowToolbar  height="auto">
+					<content>
+						<Tokenizer visible="{path:'Maintenance>/', formatter:'.isView'}" class="cockpit-tokenizer" tokens="{filterModel>/}">
+							<Token text="{filterModel>name}" delete="onRemoveFilterToken" />
+						</Tokenizer>
+						<Button visible="{path:'Maintenance>/', formatter:'.isReview'}" type="Accept" icon="sap-icon://write-new" text="Update" press="onMassUpdate"></Button>
+						<Button visible="{path:'Maintenance>/', formatter:'.isReview'}" type="Reject" icon="sap-icon://cancel" text="Cancel" press="onCancelMassUpdate"></Button>
+					</content>
+			</OverflowToolbar>
+		</subHeader>
+				<content>
+		<t:Table visible="{path:'Maintenance>/', formatter:'.isView'}" noData="Please do filter to view material(s)" rowSelectionChange="materialRowSelect" selectionMode="MultiToggle" rows="{materials>/}" 
+		visibleRowCountMode="Auto" showColumnVisibilityMenu="true" fixedColumnCount="4">
+		<t:extension>
+			<OverflowToolbar>
+					<content>
+						<Text text="Select the below item(s) for search and replace"></Text>
+						<ToolbarSpacer/>
+						<Text text="{path:'materials>/', formatter:'.getMaterialCount'}"></Text>
+					</content>
+				</OverflowToolbar>
+		</t:extension>
+		<t:columns>
+				<t:Column width="6rem" sortProperty="PurchaseGroup">
+					<Label text="Price Level"/>
+					<t:template>
+						<Text text="{materials>PurchaseGroup}"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="6rem" sortProperty="MerchCategory">
+					<Label text="Price Type"/>
+					<t:template>
+						<Text text="{materials>MerchCategory}"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="8rem" sortProperty="Location">
+					<Label text="Price Strategy"/>
+					<t:template>
+						<Text text="{materials>Location}"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="9rem" sortProperty="MaterialNo">
+					<Label text="Material Number"/>
+					<t:template>
+						<Text text="{materials>MaterialNo}"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="13rem" sortProperty="Description">
+					<Label text="Description"/>
+					<t:template>
+						<Text text="{materials>Description}"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="8rem" sortProperty="PrimaryUPC">
+					<Label text="Date From"/>
+					<t:template>
+						<Text text="{materials>PrimaryUPC}"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="8rem" sortProperty="Status">
+					<Label text="Date To"/>
+					<t:template>
+						<Text text="{materials>Status}"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="6rem" sortProperty="Status">
+					<Label text="Price"/>
+					<t:template>
+						<Text text="{materials>Price}"/>
+					</t:template>
+				</t:Column>
+			</t:columns>
+	</t:Table>			
+	
+		<t:Table visible="{path:'Maintenance>/', formatter:'.isReview'}" fixedColumnCount="4" rowSelectionChange="materialRowSelect" rows="{massUpdatePreview>/}" selectionMode="None" visibleRowCountMode="Auto" showColumnVisibilityMenu="true">
+			<t:extension>
+				<OverflowToolbar>
+						<content>
+							<Text text="1 item(s) found for find and replace. Review the details below and click on UPDATE button"></Text>
+							<ToolbarSpacer/>
+						</content>
+					</OverflowToolbar>
+			</t:extension>
+			<t:columns>
+					<t:Column width="6rem" sortProperty="PurchaseGroup">
+						<Label text="Price Level"/>
+						<t:template>
+							<VBox>
+							<Text visible="{parts:['massUpdatePreview>old/PurchaseGroup', 'massUpdatePreview>new/PurchaseGroup'], formatter:'.isOldValue'}" text="{massUpdatePreview>old/PurchaseGroup}"/>
+							<Text class="oldValuePreview" visible="{parts:['massUpdatePreview>old/PurchaseGroup', 'massUpdatePreview>new/PurchaseGroup'], formatter:'.isNewValue'}" text="{massUpdatePreview>old/PurchaseGroup}"/>
+							<Text visible="{parts:['massUpdatePreview>old/PurchaseGroup', 'massUpdatePreview>new/PurchaseGroup'], formatter:'.isNewValue'}" text="{massUpdatePreview>new/PurchaseGroup}"/>
+							</VBox>
+						</t:template>
+					</t:Column>
+					<t:Column width="6rem" sortProperty="MerchCategory">
+						<Label text="Price Type"/>
+						<t:template>
+							<VBox>
+							<Text visible="{parts:['massUpdatePreview>old/MerchCategory', 'massUpdatePreview>new/MerchCategory'], formatter:'.isOldValue'}" text="{massUpdatePreview>old/MerchCategory}"/>
+							<Text class="oldValuePreview" visible="{parts:['massUpdatePreview>old/MerchCategory', 'massUpdatePreview>new/MerchCategory'], formatter:'.isNewValue'}" text="{massUpdatePreview>old/MerchCategory}"/>
+							<Text visible="{parts:['massUpdatePreview>old/MerchCategory', 'massUpdatePreview>new/MerchCategory'], formatter:'.isNewValue'}" text="{massUpdatePreview>new/MerchCategory}"/>
+							</VBox>
+						</t:template>
+					</t:Column>
+					<t:Column width="8rem" sortProperty="Location">
+						<Label text="Price Strategy"/>
+						<t:template>
+							<VBox>
+							<Text visible="{parts:['massUpdatePreview>old/Location', 'massUpdatePreview>new/Location'], formatter:'.isOldValue'}" text="{massUpdatePreview>old/Location}"/>
+							<Text class="oldValuePreview" visible="{parts:['massUpdatePreview>old/Location', 'massUpdatePreview>new/Location'], formatter:'.isNewValue'}" text="{massUpdatePreview>old/Location}"/>
+							<Text visible="{parts:['massUpdatePreview>old/Location', 'massUpdatePreview>new/Location'], formatter:'.isNewValue'}" text="{massUpdatePreview>new/Location}"/>
+							</VBox>
+						</t:template>
+					</t:Column>
+					<t:Column width="9rem" sortProperty="MaterialNo">
+						<Label text="Material Number"/>
+						<t:template>
+							<VBox>
+							<Text visible="{parts:['massUpdatePreview>old/MaterialNo', 'massUpdatePreview>new/MaterialNo'], formatter:'.isOldValue'}" text="{massUpdatePreview>old/MaterialNo}"/>
+							<Text class="oldValuePreview" visible="{parts:['massUpdatePreview>old/MaterialNo', 'massUpdatePreview>new/MaterialNo'], formatter:'.isNewValue'}" text="{massUpdatePreview>old/MaterialNo}"/>
+							<Text visible="{parts:['massUpdatePreview>old/MaterialNo', 'massUpdatePreview>new/MaterialNo'], formatter:'.isNewValue'}" text="{massUpdatePreview>new/MaterialNo}"/>
+							</VBox>
+						</t:template>
+					</t:Column>
+					<t:Column width="13rem" sortProperty="Description">
+						<Label text="Description"/>
+						<t:template>
+							<VBox>
+							<Text visible="{parts:['massUpdatePreview>old/Description', 'massUpdatePreview>new/Description'], formatter:'.isOldValue'}" text="{massUpdatePreview>old/Description}"/>
+							<Text class="oldValuePreview" visible="{parts:['massUpdatePreview>old/Description', 'massUpdatePreview>new/Description'], formatter:'.isNewValue'}" text="{massUpdatePreview>old/Description}"/>
+							<Text visible="{parts:['massUpdatePreview>old/Description', 'massUpdatePreview>new/Description'], formatter:'.isNewValue'}" text="{massUpdatePreview>new/Description}"/>
+							</VBox>
+						</t:template>
+					</t:Column>
+					<t:Column width="8rem" sortProperty="PrimaryUPC">
+						<Label text="Date From"/>
+						<t:template>
+							<VBox>
+							<Text visible="{parts:['massUpdatePreview>old/PrimaryUPC', 'massUpdatePreview>new/PrimaryUPC'], formatter:'.isOldValue'}" text="{massUpdatePreview>old/PrimaryUPC}"/>
+							<Text class="oldValuePreview" visible="{parts:['massUpdatePreview>old/PrimaryUPC', 'massUpdatePreview>new/PrimaryUPC'], formatter:'.isNewValue'}" text="{massUpdatePreview>old/PrimaryUPC}"/>
+							<Text visible="{parts:['massUpdatePreview>old/PrimaryUPC', 'massUpdatePreview>new/PrimaryUPC'], formatter:'.isNewValue'}" text="{massUpdatePreview>new/PrimaryUPC}"/>
+							</VBox>
+						</t:template>
+					</t:Column>
+					<t:Column width="8rem" sortProperty="Status">
+						<Label text="Date To"/>
+						<t:template>
+							<VBox>
+							<Text visible="{parts:['massUpdatePreview>old/Status', 'massUpdatePreview>new/Status'], formatter:'.isOldValue'}" text="{massUpdatePreview>old/Status}"/>
+							<Text class="oldValuePreview" visible="{parts:['massUpdatePreview>old/Status', 'massUpdatePreview>new/Status'], formatter:'.isNewValue'}" text="{massUpdatePreview>old/Status}"/>
+							<Text visible="{parts:['massUpdatePreview>old/Status', 'massUpdatePreview>new/Status'], formatter:'.isNewValue'}" text="{massUpdatePreview>new/Status}"/>
+							</VBox>
+						</t:template>
+					</t:Column>
+					<t:Column width="6rem" sortProperty="Price">
+						<Label text="Price"/>
+						<t:template>
+							<VBox>
+							<Text visible="{parts:['massUpdatePreview>old/Price', 'massUpdatePreview>new/Price'], formatter:'.isOldValue'}" text="{massUpdatePreview>old/Price}"/>
+							<Text class="oldValuePreview" visible="{parts:['massUpdatePreview>old/Price', 'massUpdatePreview>new/Price'], formatter:'.isNewValue'}" text="{massUpdatePreview>old/Price}"/>
+							<Text visible="{parts:['massUpdatePreview>old/Price', 'massUpdatePreview>new/Price'], formatter:'.isNewValue'}" text="{massUpdatePreview>new/Price}"/>
+							</VBox>
+						</t:template>
+					</t:Column>
+				</t:columns>
+		</t:Table>			
+				</content>
+			</Page>
+</mvc:View>

@@ -1,0 +1,17 @@
+[
+	{"PurchaseGroup":"Level 0", "MerchCategory": "01", "Location": "001", "MaterialNo": "3420", "Description": "PLANTERS LT.SLT.MX.NUTS", "PrimaryUPC": "01/05/2020", "Status": "12/31/9999","Price":"10.00"},
+	{"PurchaseGroup":"Level 0", "MerchCategory": "01", "Location": "001", "MaterialNo": "3422", "Description": "PLANTERS LT.SLT.DR.PNUT", "PrimaryUPC": "05/05/2020", "Status": "12/31/9999","Price":"11.00"},
+	{"PurchaseGroup":"Level 0", "MerchCategory": "20", "Location": "001", "MaterialNo": "3495", "Description": "PLANTERS CASHEW HALVES/PIECES", "PrimaryUPC": "09/05/2020", "Status": "12/31/9999","Price":"20.00"},
+	{"PurchaseGroup":"Level 1", "MerchCategory": "20", "Location": "001", "MaterialNo": "3497", "Description": "PLANTERS HNY.R.P.NUT", "PrimaryUPC": "10/05/2020", "Status": "12/31/9999","Price":"1.00"},
+	{"PurchaseGroup":"Level 1", "MerchCategory": "01", "Location": "002", "MaterialNo": "3506", "Description": "PLANTERS MIXED NUTS", "PrimaryUPC": "01/05/2020", "Status": "12/31/9999","Price":"2.00"},
+	{"PurchaseGroup":"Level 1", "MerchCategory": "20", "Location": "002", "MaterialNo": "3512", "Description": "PLANTERS COCKTAIL NUT", "PrimaryUPC": "01/05/2020", "Status": "12/31/9999","Price":"5.00"},
+	{"PurchaseGroup":"Level 2", "MerchCategory": "20", "Location": "002", "MaterialNo": "3513", "Description": "PLANTERS COCKTL P NUT", "PrimaryUPC": "05/09/1998", "Status": "12/31/9999","Price":"18.00"},
+	{"PurchaseGroup":"Level 2", "MerchCategory": "25", "Location": "201", "MaterialNo": "3516", "Description": "PLANTERS SPANISH PNU", "PrimaryUPC": "01/05/2020", "Status": "12/31/9999","Price":"11.00"},
+	{"PurchaseGroup":"Level 2", "MerchCategory": "25", "Location": "202", "MaterialNo": "3519", "Description": "PLANTERS D.R.PEANUTS", "PrimaryUPC": "01/05/2020", "Status": "12/31/9999","Price":"15.00"},
+	{"PurchaseGroup":"Level 2", "MerchCategory": "25", "Location": "204", "MaterialNo": "3880", "Description": "WERTHERS ORIGINAL", "PrimaryUPC": "08/09/2018", "Status": "12/31/9999","Price":"18.00"},
+	{"PurchaseGroup":"Level 3", "MerchCategory": "30", "Location": "205", "MaterialNo": "4006", "Description": "ATKINSON PEANUT BUTTER BARS ", "PrimaryUPC": "01/05/2020", "Status": "12/31/9999","Price":"10.00"},
+	{"PurchaseGroup":"Level 3", "MerchCategory": "30", "Location": "204", "MaterialNo": "4120", "Description": "REESE PEANUT BUTTER 6 PACK", "PrimaryUPC": "01/04/2020", "Status": "12/31/9999","Price":"2.00"},
+	{"PurchaseGroup":"Level 3", "MerchCategory": "30", "Location": "206", "MaterialNo": "4132", "Description": "HERSHEY MILK CHOCOLATE 6 PACK", "PrimaryUPC": "01/05/2020", "Status": "12/31/9999","Price":"10.00"},
+	{"PurchaseGroup":"Level 3", "MerchCategory": "30", "Location": "206", "MaterialNo": "4138", "Description": "REESES PNB.CUP SNK.SIZE", "PrimaryUPC": "01/05/2020", "Status": "12/31/9999","Price":"1.00"},
+	{"PurchaseGroup":"Level 3", "MerchCategory": "30", "Location": "206", "MaterialNo": "4175", "Description": "SNICKERS BAR 6 PACK", "PrimaryUPC": "01/05/2020", "Status": "12/31/9999","Price":"7.00"}
+]

@@ -1,0 +1,148 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "com.ingles.retail_pricing.mass_price.mass_price",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		},
+		"dataSources": {
+			"materialsSource": {
+				"uri": "data/materials.json",
+				"type": "JSON"
+			},
+			"massupdateSource": {
+				"uri": "data/massupdatepreview.json",
+				"type": "JSON"
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "com.ingles.retail_pricing.mass_price.mass_price.view.FlexibleColumnLayout",
+			"type": "XML",
+			"async": true,
+			"id": "fcl"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.1",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.f": {}
+			}
+		},
+		"config": {
+			"fullWidth": true
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.ingles.retail_pricing.mass_price.mass_price.i18n.i18n"
+				}
+			},
+			"materials": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "materialsSource"
+			},
+			"massUpdatePreview": {
+				"dataSource": "massupdateSource",
+				"type": "sap.ui.model.json.JSONModel"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.f.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "com.ingles.retail_pricing.mass_price.mass_price.view",
+				"controlId": "fcl",
+				"transition": "slide"
+			},
+			"routes": [
+				{
+					"pattern": ":layout:",
+					"name": "master",
+					"target": [
+						"master"
+					]
+				},
+				{
+					"pattern": "detail/{layout}",
+					"name": "detail",
+					"target": [
+						"master",
+						"detail"
+					]
+				},
+				{
+					"pattern": "detailDetail/{layout}",
+					"name": "detailDetail",
+					"target": [
+						"detailMaster",
+						"detailDetail"
+					]
+				}
+			],
+			"targets": {
+				"master": {
+					"viewName": "MaterialSearch",
+					"controlAggregation": "beginColumnPages"
+				},
+				"detail": {
+					"viewName": "MaterialList",
+					"controlAggregation": "midColumnPages"
+				},
+				"detailMaster": {
+					"viewName": "MaterialList",
+					"controlAggregation": "beginColumnPages"
+				},
+				"detailDetail": {
+					"viewName": "SearchReplace",
+					"controlAggregation": "midColumnPages"
+				}
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zig_mass_price/webapp",
+		"_version": "1.1.0"
+	}
+}

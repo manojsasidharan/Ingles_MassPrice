@@ -1,0 +1,6 @@
+[
+	{
+		"old": {"PurchaseGroup":"Level 0", "MerchCategory": "01", "Location": "001", "MaterialNo": "3420", "Description": "PLANTERS LT.SLT.MX.NUTS", "PrimaryUPC": "03/11/2021", "Status": "12/31/9999","Price":"10.00"},
+		"new": {"PurchaseGroup":"Level 1", "MerchCategory": "01", "Location": "001", "MaterialNo": "3420", "Description": "PLANTERS LT.SLT.MX.NUTS", "PrimaryUPC": "04/11/2021", "Status": "12/09/2022","Price":"10.00"}
+	}
+]

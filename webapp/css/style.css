@@ -1,0 +1,14 @@
+/* Enter your custom styles here */
+.SearchReplaceContent .sapMFlexItem {
+	width: 100% !important;
+}
+
+.SearchReplacePanel {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.oldValuePreview {
+	color: red;
+    text-decoration: line-through;
+}
