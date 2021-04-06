@@ -30,28 +30,8 @@
 					<fb:FilterGroupItem groupName="G1" name="B" label="Vendor" visibleInAdvancedArea="true">
 						<fb:control>
 							<!--<MultiInput/>-->
-							<MultiInput id="multiInput" valueHelpRequest=".onValueHelpRequested" suggestionRows="{ path: '/ProductCollection',length: 50 }">
-								<suggestionColumns>
-									<Column>
-										<Label text="ProductId"/>
-									</Column>
-									<Column>
-										<Label text="Product Name"/>
-									</Column>
-									<Column>
-										<Label text="Category"/>
-									</Column>
-								</suggestionColumns>
-								<suggestionRows>
-									<ColumnListItem>
-										<cells>
-											<Label text="{ProductId}"/>
-											<Label text="{Name}"/>
-											<Label text="{Category}"/>
-										</cells>
-									</ColumnListItem>
-								</suggestionRows>
-							</MultiInput>
+							<MultiInput name="VendorInput" id="VendorInput" valueHelpRequest=".onVendorValueHelp"
+								tokenUpdate=".tokenUpdate($event, '/FilterInput/Vendor')"/>
 						</fb:control>
 					</fb:FilterGroupItem>
 				</fb:filterGroupItems>
@@ -154,7 +134,7 @@
 					</fb:FilterGroupItem>
 					<fb:FilterGroupItem groupName="G2" name="N" label="Date From" visibleInAdvancedArea="true">
 						<fb:control>
-							<DatePicker value="02/17/2021" valueFormat="MM/dd/yyyy"></DatePicker>
+							<DatePicker value="{query>/FromDate}" valueFormat="MM/dd/yyyy" />
 						</fb:control>
 					</fb:FilterGroupItem>
 					<fb:FilterGroupItem groupName="G2" name="O" label="Date To" visibleInAdvancedArea="true">

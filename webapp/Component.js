@@ -33,6 +33,9 @@ sap.ui.define([
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+			this.setModel(models.onewModel(), "query");
+			this.setModel(models.appControlModel(), "appControl");
+			this.setModel(models.masterDataModel(), "MasterDataModel");				
 		},
 		getHelper: function () {
 			var oFCL = this.getRootControl().byId("fcl"),

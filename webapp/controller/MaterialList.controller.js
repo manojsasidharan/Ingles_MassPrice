@@ -69,10 +69,10 @@ sap.ui.define([
 			this.onViewMassMaintenance("", "", "");
 			sap.ui.getCore().getMessageManager().removeAllMessages();
 			this.addMessageToTarget("", "", "SAP Promo document number xxxx created successfully!!", "Success",
-				"Material: 3420 Price Level: 0 Price Type: 01 Price Strategy: 001 Successfully posted",
+				"",
 				"S", "");
 
-			this.addMessageToTarget("", "", "Please enter valid Price", "Error", "Please check the Price at Row 2", "E", "");
+			//this.addMessageToTarget("", "", "Please enter valid Price", "Error", "Please check the Price at Row 2", "E", "");
 
 			this.createdialog();
 		},
