@@ -1,10 +1,10 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"com/ingles/retail_pricing/mass_price/mass_price/controller/ValueHelper"	
+	"Ingles/Mock/MassPrice/controller/ValueHelper"	
 ], function (Controller, ValueHelper) {
 	"use strict";
 
-	return Controller.extend("com.ingles.retail_pricing.mass_price.mass_price.controller.MaterialSearch", {
+	return Controller.extend("Ingles.Mock.MassPrice.controller.MaterialSearch", {
 		onInit: function () {
 			this.eventBus = sap.ui.getCore().getEventBus();
 			this._vendorValueHelp = new ValueHelper(this, 'VENDOR');

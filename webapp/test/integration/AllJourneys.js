@@ -7,7 +7,7 @@ sap.ui.define([
 
 	Opa5.extendConfig({
 		arrangements: new Startup(),
-		viewNamespace: "com.ingles.retail_pricing.mass_price.mass_price.view.",
+		viewNamespace: "Ingles.Mock.MassPrice.view.",
 		autoWait: true
 	});
 });

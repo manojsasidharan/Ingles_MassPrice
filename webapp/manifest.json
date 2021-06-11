@@ -1,7 +1,7 @@
 {
 	"_version": "1.12.0",
 	"sap.app": {
-		"id": "com.ingles.retail_pricing.mass_price.mass_price",
+		"id": "Ingles.Mock.MassPrice",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -43,7 +43,7 @@
 	"sap.ui5": {
 		"flexEnabled": false,
 		"rootView": {
-			"viewName": "com.ingles.retail_pricing.mass_price.mass_price.view.FlexibleColumnLayout",
+			"viewName": "Ingles.Mock.MassPrice.view.FlexibleColumnLayout",
 			"type": "XML",
 			"async": true,
 			"id": "fcl"
@@ -74,7 +74,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "com.ingles.retail_pricing.mass_price.mass_price.i18n.i18n"
+					"bundleName": "Ingles.Mock.MassPrice.i18n.i18n"
 				}
 			},
 			"materials": {
@@ -98,7 +98,7 @@
 				"routerClass": "sap.f.routing.Router",
 				"viewType": "XML",
 				"async": true,
-				"viewPath": "com.ingles.retail_pricing.mass_price.mass_price.view",
+				"viewPath": "Ingles.Mock.MassPrice.view",
 				"controlId": "fcl",
 				"transition": "slide"
 			},
@@ -148,7 +148,7 @@
 		}
 	},
 	"sap.platform.abap": {
-		"uri": "/sap/bc/ui5_ui5/sap/zig_mass_price/webapp",
+		"uri": "/sap/bc/ui5_ui5/sap/zmockmassprice/webapp",
 		"_version": "1.1.0"
 	}
 }

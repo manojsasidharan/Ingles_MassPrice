@@ -37,7 +37,7 @@ sap.ui.define([
 		},
 
 		masterDataModel: function () {
-			var sPath = jQuery.sap.getModulePath("com.ingles.retail_pricing.mass_price.mass_price", "/data/masterData.json");
+			var sPath = jQuery.sap.getModulePath("Ingles.Mock.MassPrice", "/data/masterData.json");
 			var masterDataModel = new JSONModel(sPath);
 			return masterDataModel;
 		},

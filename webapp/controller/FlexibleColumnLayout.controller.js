@@ -4,7 +4,7 @@ sap.ui.define([
 ], function (Controller, JSONModel) {
 	"use strict";
 
-	return Controller.extend("com.ingles.retail_pricing.mass_price.mass_price.controller.FlexibleColumnLayout", {
+	return Controller.extend("Ingles.Mock.MassPrice.controller.FlexibleColumnLayout", {
 
 		onInit: function () {
 			this.oRouter = this.getOwnerComponent().getRouter();

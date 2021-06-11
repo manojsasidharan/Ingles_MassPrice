@@ -1,7 +1,7 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"com/ingles/retail_pricing/mass_price/mass_price/model/models",
+	"Ingles/Mock/MassPrice/model/models",
 	"sap/base/util/UriParameters",
 	"sap/ui/model/json/JSONModel",
 	"sap/f/library",
@@ -11,7 +11,7 @@ sap.ui.define([
 	
 	var LayoutType = library.LayoutType;
 	
-	return UIComponent.extend("com.ingles.retail_pricing.mass_price.mass_price.Component", {
+	return UIComponent.extend("Ingles.Mock.MassPrice.Component", {
 
 		metadata: {
 			manifest: "json"

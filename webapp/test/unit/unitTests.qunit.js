@@ -5,7 +5,7 @@ sap.ui.getCore().attachInit(function () {
 	"use strict";
 
 	sap.ui.require([
-		"com/ingles/retail_pricing/mass_price/mass_price/test/unit/AllTests"
+		"Ingles/Mock/MassPrice/test/unit/AllTests"
 	], function () {
 		QUnit.start();
 	});
